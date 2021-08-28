@@ -10,7 +10,7 @@ const updateTimer = () => {
     const FINAL = new Date(currentYear, 8, 18, 0, 0, 0, 0)
     const TIME_LEFT = new Date(FINAL - TODAY)
     days.innerText = Math.floor(TIME_LEFT / 1000 / 60 / 60 / 24);
-    hours.innerText = Math.floor(TIME_LEFT / 1000 / 60 / 60) % 24;
+    hours.innerText = Math.floor(TIME_LEFT / 1000 / 60 / 60) % 24 + 1;
     minutes.innerText = Math.floor(TIME_LEFT / 1000 / 60) % 60;
     seconds.innerText = Math.floor(TIME_LEFT / 1000) % 60;
 

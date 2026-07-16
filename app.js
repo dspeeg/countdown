@@ -9,10 +9,10 @@ const updateTimer = () => {
     const TODAY = new Date()
     const FINAL = new Date(currentYear, 8, 18, 0, 0, 0, 0)
     const TIME_LEFT = new Date(FINAL - TODAY)
-    days.innerText = Math.floor(TIME_LEFT / 1000 / 60 / 60 / 24);
-    hours.innerText = Math.floor(TIME_LEFT / 1000 / 60 / 60) % 24 + 1;
-    minutes.innerText = Math.floor(TIME_LEFT / 1000 / 60) % 60;
-    seconds.innerText = Math.floor(TIME_LEFT / 1000) % 60;
+    days.innerText = String(Math.floor(TIME_LEFT / 1000 / 60 / 60 / 24)).padStart(2, "0");
+    hours.innerText = String(Math.floor(TIME_LEFT / 1000 / 60 / 60) % 24).padStart(2, "0");
+    minutes.innerText = String(Math.floor(TIME_LEFT / 1000 / 60) % 60).padStart(2, "0");
+    seconds.innerText = String(Math.floor(TIME_LEFT / 1000) % 60).padStart(2, "0");
 
     if (TIME_LEFT <= 0) currentYear++
 }
